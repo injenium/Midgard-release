@@ -36,7 +36,7 @@ Midgard 不附带模型或模型额度。你需要一个已运行的本地模型
 在 **Apple 芯片 Mac** 或 **Linux** 的终端中执行以下命令，安装并使用中文界面：
 
 ```sh
-curl -fsSL https://github.com/injenium/Midgard-release/releases/latest/download/install.sh | sh -s -- --version 1.1.0 --release-url https://github.com/injenium/Midgard-release/releases/download cn
+curl -fsSL https://github.com/injenium/Midgard-release/releases/latest/download/install.sh | sh -s -- --version 1.1.1 --release-url https://github.com/injenium/Midgard-release/releases/download cn
 ```
 
 想使用英文，把最后的 `cn` 换成 `en`。不加语言参数时，安装器默认英文；已有的界面偏好不会被无故重置。
