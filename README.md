@@ -36,7 +36,7 @@ Midgard 不附带模型或模型额度。你需要一个已运行的本地模型
 在 **Apple 芯片 Mac** 或 **Linux** 的终端中执行以下命令，安装并使用中文界面：
 
 ```sh
-curl -fsSL https://github.com/injenium/Midgard-release/releases/latest/download/install.sh | sh -s -- --version 1.1.1 --release-url https://github.com/injenium/Midgard-release/releases/download cn
+curl -fsSL https://github.com/injenium/Midgard-release/releases/latest/download/install.sh | sh -s -- --version 1.1.2 --release-url https://github.com/injenium/Midgard-release/releases/download cn
 ```
 
 想使用英文，把最后的 `cn` 换成 `en`。不加语言参数时，安装器默认英文；已有的界面偏好不会被无故重置。
@@ -83,10 +83,12 @@ midgard
 已经安装过，无需重新复制安装命令：
 
 ```sh
-midgard update --stop-service
+midgard update
 ```
 
-更新会按确认暂停后台服务，并提示你为本地备份设置口令。请妥善保管口令；更新完成后，运行 `midgard` 并按提示重新启动工作区。
+普通更新会自动暂停已注册的后台服务、取消正在进行的任务，并生成本机加密恢复快照，无需反复确认或输入口令。更新完成后运行 `midgard service start` 重新启动服务。前台运行的服务需先自行退出；数据格式迁移仍会单独提示确认。
+
+本机快照依赖原主密钥，不替代独立备份。旧版首次升级仍可能要求加上 `--stop-service`、确认和设置口令，后续升级才采用简化流程。
 
 只想看看有没有新版本，可以运行 `midgard update --check`。每个版本的变化都在[更新记录](https://github.com/injenium/Midgard-release/releases)里。
 
